@@ -1,15 +1,17 @@
-name: Branch 
 
-on:
-  pull_request_target:
-    types: [opened]
+#This is used if you want to close a pull request to your repo, dont need it for now, just uncomment if you ever do 
+#name: Branch 
 
-jobs:
-  close:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: superbrothers/close-pull-request@v3
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+#on:
+  #pull_request_target:
+    #types: [opened]
+
+#jobs:
+  #close:
+    #runs-on: ubuntu-latest
+    #steps:
+    #- uses: superbrothers/close-pull-request@v3
+      #with:
+        #repo-token: ${{ secrets.GITHUB_TOKEN }}
         # Optional. Post a issue comment just before closing a pull request.
-        comment: "Thanks for this pull request"
+        #comment: "Thanks for this pull request"
