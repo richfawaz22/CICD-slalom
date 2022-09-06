@@ -37,10 +37,10 @@ jobs:
         id: plan
         if: github.event_name == 'pull_request'
         run: terraform plan -no-color -input=false
-        continue-on-error: true
+        continue-on-error: true #will still continue if there is a failure here 
 
       - uses: actions/github-script@v6
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' #only runs on pull requests
         env:
           PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
         with:
@@ -67,7 +67,7 @@ jobs:
               repo: context.repo.repo,
               body: output
             })
-        #if there is a failure here is exits the pipeline
+        #if there is a failure here it exits the pipeline
       - name: Terraform Plan Status
         if: steps.plan.outcome == 'failure'
         run: exit 1
