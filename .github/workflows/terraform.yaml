@@ -1,4 +1,4 @@
-#Runs when a pull request is opened or merged on main only, this follows best DevOps practices and gitHub flow
+#Runs when a pull request is opened or merged on main only, this follows best DevOps practices and gitHub flow, best practice
 name: "Terraform"
 
 on:
