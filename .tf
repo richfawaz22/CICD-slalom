@@ -55,7 +55,7 @@ resource "aws_security_group" "demosg" {
   description = "Demo Module"
   vpc_id      = "${aws_vpc.demovpc.id}"
 
-  # Inbound Rules
+  # Inbound Rule
   # HTTP access from anywhere
   ingress {
     from_port   = 80
