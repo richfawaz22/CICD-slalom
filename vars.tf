@@ -38,13 +38,13 @@ variable "subnet1_cidr" {
 variable "ami" {
   default = {
     eu-west-1 = "ami-09e2d756e7d78558d"
-    us-east-1 = "ami-05fa00d4c63e32376" 
+    us-east-1 = "ami-0568773882d492fc8" 
   }
 }
 
 # Defining Instace Type
 variable "instancetype" {
-  default = "t2.medium"
+  default = "t2.micro"
 }
 
 # Defining Master count 
