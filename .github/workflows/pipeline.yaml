@@ -1,35 +1,74 @@
-#trying a few things here 
-name: Terraform-GitHub-Actions
+#testing NPM start and test 
+name: Main
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ] 
-env:
-  AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_key }}
+  workflow_dispatch:
 jobs:
   build:
-    name: build
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with: 
+          node-version: "14.x"
+      - name: Install dependencies
+        run: npm install
+      - name: Run test
+        run: npm test
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# #trying a few things here 
+# name: Terraform-GitHub-Actions
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ] 
+# env:
+#   AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key }}
+#   AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_key }}
+# jobs:
+#   build:
+#     name: build
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
        
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v1
+#       - name: Set up Terraform
+#         uses: hashicorp/setup-terraform@v1
       
-      - name: Terraform Init
-        id: init
-        run: terraform init
+#       - name: Terraform Init
+#         id: init
+#         run: terraform init
       
-      - name: Terraform Plan
-        id: plan
-        run: terraform plan
+#       - name: Terraform Plan
+#         id: plan
+#         run: terraform plan
       
-      - name: Terraform Apply
-        id: apply
-        run: terraform apply --auto-approve
+#       - name: Terraform Apply
+#         id: apply
+#         run: terraform apply --auto-approve
 
 
 
