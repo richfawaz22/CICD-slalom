@@ -39,7 +39,7 @@ jobs:
         id: init
         run: |
            rm -rf .terraform
-           terraform init -backend-config=${{ matrix.environment }}/backend.tfvars -upgrade=true -no-color -input=false
+           terraform init 
       - name: Terraform Plan
         id: plan
         run: |
