@@ -10,7 +10,7 @@ terraform {
     }
   }
   required_version = ">= 1.1.0"
-
+#for terraform cloud, used this instead of s3 bucket becuase of siimplicity 
   cloud {
     organization = "test-gh"
 
