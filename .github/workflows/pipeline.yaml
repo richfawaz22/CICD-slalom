@@ -35,7 +35,7 @@ jobs:
   terraform:
     name:   ${{matrix.runner}} - ${{ matrix.environment }}
     runs-on: [ '${{ matrix.runner }}']
-    needs: terraform
+    needs: build-node
     strategy:
       max-parallel: 1
       matrix:
