@@ -1,13 +1,11 @@
-# Created by https://www.toptal.com/developers/gitignore/api/terraform
+
 
 
 ### Terraform ###
 # Local .terraform directories
-**/.terraform/*
 
 # .tfstate files
-*.tfstate
-*.tfstate.*
+
 
 # Crash log files
 crash.log
