@@ -87,7 +87,7 @@ jobs:
     needs: terraform
     if: github.event_name == 'pull_request'
     steps:
-      - uses: actions/github-script@v5
+      - uses: actions/github-script@v6.3.0
         with:
           script: |
             github.rest.issues.createComment({
@@ -298,7 +298,7 @@ jobs:
 # # #     needs: terraform
 # # #     if: github.event_name == 'pull_request'
 # # #     steps:
-# # #       - uses: actions/github-script@v5
+# # #       - uses: actions/github-script@v6.3.0
 # # #         with:
 # # #           script: |
 # # #             github.rest.issues.createComment({
