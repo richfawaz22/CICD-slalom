@@ -23,7 +23,7 @@ jobs:
            - environemnt: prod
              runner: ubuntu-latest
     steps: 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
       - name: use Node.js
         uses: actions/setup-node@v2
         with: 
@@ -49,12 +49,12 @@ jobs:
          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
          AWS_DEFAULT_REGION: us-east-2
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
       - uses: hashicorp/setup-terraform@v1
         with:
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
       - name: Linting Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.1.0
       - name: Terraform lint
         uses: devops-infra/action-tflint@v0.3 
       - name: Terraform Init
@@ -75,7 +75,7 @@ jobs:
     needs: terraform
     if: github.ref == 'refs/heads/main'
     steps: 
-       - uses: actions/checkout@v2
+       - uses: actions/checkout@v3.1.0
        - uses: akhileshns/heroku-deploy@v3.12.12
          with: 
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
@@ -115,7 +115,7 @@ jobs:
 #     runs-on: ubuntu-latest
 
 #     steps:
-#       - uses: actions/checkout@v2
+#       - uses: actions/checkout@v3.1.0
 #       - name: Use Node.js
 #         uses: actions/setup-node@v2
 #         with: 
@@ -129,7 +129,7 @@ jobs:
 #     runs-on: ubuntu-latest
 #     needs: [build]
 #     steps:
-#       - uses: actions/checkout@v2
+#       - uses: actions/checkout@v3.1.0
 #       - uses: akhileshns/heroku-deploy@v3.12.12 
 #         with:
 #           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
@@ -180,7 +180,7 @@ jobs:
 #         uses: hashicorp/setup-terraform@v1
       
 #       - name: Linting Checkout
-#         uses: actions/checkout@v2
+#         uses: actions/checkout@v3.1.0
 #       - name: Terraform lint
 #         uses: devops-infra/action-tflint@v0.3 
         
@@ -189,7 +189,7 @@ jobs:
 #         run: terraform init
       
 #       - name: Linting Checkout
-#         uses: actions/checkout@v2
+#         uses: actions/checkout@v3.1.0
 #       - name: Terraform lint
 #         uses: devops-infra/action-tflint@v0.3 
         
@@ -276,7 +276,7 @@ jobs:
 # # #          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 # # #          AWS_DEFAULT_REGION: us-east-2
 # # #     steps:
-# # #       - uses: actions/checkout@v2
+# # #       - uses: actions/checkout@v3.1.0
 # # #       - uses: hashicorp/setup-terraform@v1
 # # #         with:
 # # #           terraform_wrapper: false
@@ -322,7 +322,7 @@ jobs:
 # # #     runs-on: ubuntu-latest
 
 # # #     steps:
-# # #       - uses: actions/checkout@v2
+# # #       - uses: actions/checkout@v3.1.0
 # # #       - name: Use Node.js
 # # #         uses: actions/setup-node@v2
 # # #         with: 
@@ -336,7 +336,7 @@ jobs:
 # # #     runs-on: ubuntu-latest
 # # #     needs: [build]
 # # #     steps:
-# # #       - uses: actions/checkout@v2
+# # #       - uses: actions/checkout@v3.1.0
 # # #       - uses: akhileshns/heroku-deploy@v3.12.12 
 # # #         with:
 # # #           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
@@ -387,7 +387,7 @@ jobs:
 # #         uses: hashicorp/setup-terraform@v1
       
 # #       - name: Linting Checkout
-# #         uses: actions/checkout@v2
+# #         uses: actions/checkout@v3.1.0
 # #       - name: Terraform lint
 # #         uses: devops-infra/action-tflint@v0.3 
         
@@ -396,7 +396,7 @@ jobs:
 # #         run: terraform init
       
 # #       - name: Linting Checkout
-# #         uses: actions/checkout@v2
+# #         uses: actions/checkout@v3.1.0
 # #       - name: Terraform lint
 # #         uses: devops-infra/action-tflint@v0.3 
         
